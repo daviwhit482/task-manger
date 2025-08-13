@@ -13,8 +13,12 @@ def addTask():
 def delTask():
     for index, element in enumerate(taskList, start=1):
         print(f"{index}. {element}")
-    taskNum = int(input("Select a task to delete: "))
-    taskList.pop(taskNum - 1)
+    taskNum = ''
+    while taskNum != 'x':
+        taskNum = input("Select a task to delete (enter 'x' to return to menu): ")
+        if taskNum != 'x':
+            num = int(taskNum)
+            taskList.pop(num - 1)
     Main()
 
 # allows users to re-write whatever is in that numbered place
@@ -68,11 +72,10 @@ def Main():
         print("1. Add a task")
         print("2. Delete a task")
         print("3. Edit a task")
-        print("4. Edit a task")
-        print("5. View all tasks")
-        print("6. Save tasks to file")
-        print("7. Load tasks from file")
-        print("8. Exit")
+        print("4. View all tasks")
+        print("5. Save tasks to file")
+        print("6. Load tasks from file")
+        print("7. Exit")
 
         try:
             choice = int(input("Enter your choice (1-7): "))
