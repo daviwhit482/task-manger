@@ -6,7 +6,6 @@ def addTask():
         task = str(input("Enter task to add (enter 'x' to return to menu): "))
         if task != 'x':
             taskList.append(task)
-    Main()
 
 # delete task using pop so when an element above it is removed all elements shift up
 
@@ -19,7 +18,6 @@ def delTask():
         if taskNum != 'x':
             num = int(taskNum)
             taskList.pop(num - 1)
-    Main()
 
 # allows users to re-write whatever is in that numbered place
 
@@ -29,7 +27,6 @@ def editTask():
     taskNum = int(input("Select a task to edit: "))
     newTask = str(input("Enter the edited task: "))
     taskList[taskNum - 1] = newTask
-    Main()
 
 # view task using enumerate so each task is numbered before it
 
@@ -37,16 +34,18 @@ def viewTask():
     print("Current tasks: ")
     for index, element in enumerate(taskList, start=1):
         print(f"{index}. {element}")
-    Main()
 
 # saving to file using write so that it overrides whatever is currently in that file
 
 def saveFile():
     file_name = str(input("Enter the name of the file you want to save to: "))
-    with open(file_name, "w") as file:
-        for task in taskList:
-            file.write(task + "\n")
-    Main()
+    try:
+        with open(file_name, "w") as file:
+            for task in taskList:
+                file.write(task + "\n")
+        print("Tasks successfully saved to file!")
+    except:
+        print("Invalid file name.")
 
 # using try except so that if user enters an invalid file name, program doesn't break
 
@@ -59,8 +58,7 @@ def loadFile():
             print("Tasks have been loaded successfully.")
     except FileNotFoundError:
         print("That file doesn't exist.")
-    Main()
-
+        
 # main
 
 taskList = []
