@@ -1,5 +1,8 @@
 # Task Manager CLI
 
+![Python](https://img.shields.io/badge/python-3.x-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 A simple command-line task management application in Python that allows you to **add, view, edit, delete, save, and load tasks**. Each task includes a description, priority, due date, and status.
 
 ## Features
@@ -33,7 +36,3 @@ Task Description,Priority,Due Date,Status
 - Add sorting/filtering tasks by priority or due date.
 - Add reminders or notifications.
 - Create a web application version using Flask.
-
-![Python](https://img.shields.io/badge/python-3.x-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-
