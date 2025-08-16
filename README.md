@@ -33,3 +33,7 @@ Task Description,Priority,Due Date,Status
 - Add sorting/filtering tasks by priority or due date.
 - Add reminders or notifications.
 - Create a web application version using Flask.
+
+![Python](https://img.shields.io/badge/python-3.x-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
